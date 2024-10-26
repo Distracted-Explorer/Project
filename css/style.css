@@ -1,0 +1,383 @@
+/* Resetting padding, margin, and setting font family */
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+/* Setting body dimensions and background gradient */
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #a960ff, #ef60aa);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Styling the main box container */
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 50px -20px rgb(0 0 0);
+}
+
+/* Button box layout and styling */
+.box .button_box {
+    width: 100%;
+    margin: 20px 0px;
+    display: flex;
+    position: relative;
+}
+
+/* Styling the signup and login buttons */
+.box .button_box .signup_button,
+.box .button_box .login_button {
+    width: 50%;
+    padding: 10px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+/* Styling the slider button behind the signup/login buttons */
+.box .button_box .slider_button {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(45deg, #1645c0, #ed21e4);
+    z-index: -1;
+    border-radius: 5px;
+    left: 0px;
+    transition: all 0.4s cubic-bezier(0.150, -0.100, 0.700, -0.500);
+}
+
+/* Form box dimensions and overflow */
+.box .form_box {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Form slider for transitioning between forms */
+.box .form_slider {
+    position: absolute;
+    width: 200%;
+    display: flex;
+    left: 0%;
+    transition: all 0.4s cubic-bezier(0.150, -0.100, 0.700, -0.500);
+}
+
+/* Form styling */
+.box .form_box form {
+    width: 100%;
+    margin: 0px 10px;
+}
+
+/* Padding for the login form */
+.box .form_box .login_form {
+    padding-top: 30px;
+}
+
+/* Styling for input field container */
+.form_box form .input_field_box {
+    height: 350px;
+    overflow-y: auto; 
+}
+
+/* Hiding the scrollbar for input field container */
+.form_box form .input_field_box::-webkit-scrollbar {
+    display: none;
+}
+
+/* Input field styling */
+.form_box form .input_box {
+    width: 100%;
+    margin: 30px 0px;
+    text-align: center;
+    position: relative;
+}
+
+/* Input field properties */
+.form_box form .input_box input {
+    width: 95%;
+    font-size: 25px;
+    padding: 8px 0px;
+    border-width: 0px 0px 2px 0px;
+    outline: none;
+}
+
+/* Label positioning and styling for input fields */
+.form_box form .input_box label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 25px;
+    pointer-events: none;
+    color: #6d6d6d;
+    transition: 0.3s;
+}
+
+/* Border color change on focus or valid input */
+.form_box form .input_box input:focus,
+.form_box form .input_box input:valid {
+    border-color: blue;
+}
+
+/* Label animation on input focus or valid state */
+.form_box form .input_box input:focus + label,
+.form_box form .input_box input:valid + label {
+    top: -16px;
+    font-size: 18px;
+    color: rgb(35, 35, 233);
+}
+
+/* Password link styling */
+.form_box form .password_link {
+    text-align: right;
+    margin: 20px 0px;
+    font-size: 20px;
+}
+
+/* Password link color */
+.form_box form .password_link a {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
+
+/* Button styling in the form */
+.form_box form button {
+    width: 100%;
+    padding: 10px 25px;
+    font-size: 25px;
+    border: none;
+    background: linear-gradient(45deg, #1645c0, #ed21e4);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button active state */
+.form_box form button:active {
+    transform: scale3d(0.9, 0.9, 0.9);
+}
+
+/* Styling for the switch component */
+.switch {
+    font-size: 17px;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+/* Hiding the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider component styling */
+.slider {
+    --background: #20262c;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+/* Before styling of the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+    background: var(--background);
+    transition: 0.5s;
+}
+
+/* Decoration styling for the switch */
+.decoration {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    right: 20%;
+    top: 15%;
+    background: #e5f041e6;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s;
+    box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+      -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+/* Decoration animation when input is checked */
+input:checked ~ .decoration {
+    transform: translateX(-20px);
+    width: 10px;
+    height: 10px;
+    background: white;
+    box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+      1px 17px 0 white, 10px 17px 0 white;
+}
+
+/* Slider color when input is checked */
+input:checked + .slider {
+    background-color: #5494de;
+}
+
+/* Slider before state when input is checked */
+input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 465px) {
+    .box {
+        width: 250px;
+    }
+    .box .form_box {
+        top: 50%;
+    }
+    .form_box form .input_field_box {
+        height: 350px;
+        overflow-y: auto; 
+    }
+    .box .button_box .signup_button,
+    .box .button_box .login_button {
+        font-size: 15px;
+    }
+    .form_box form .input_box input {
+        font-size: 18px;
+        border-width: 0px 0px 2px 0px;
+    }
+    .form_box form .input_box label {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        font-size: 18px;
+        color: #6d6d6d;
+        transition: 0.3s;
+    }
+    .form_box form button {
+        width: 100%;
+        font-size: 18px;
+        background: linear-gradient(45deg, #1645c0, #ed21e4);
+        color: #fff;
+        border-radius: 5px;
+    }
+}
+
+/* Dark mode styles for the body */
+.dark-mode {
+    background-image: url(1000_F_291280414_fspNbeRxytVG0gPdB3StkrM9YqVrZUc4.jpg);
+}
+
+/* Dark mode styles for the main box */
+.dark-mode .box {
+    background-color: #240046;
+}
+
+/* Dark mode input field properties */
+.dark-mode .input_box input {
+    border-color: #bbb;
+    color: #fff;
+}
+
+/* Dark mode label color */
+.dark-mode .input_box label {
+    color: #bbb;
+}
+
+/* Dark mode password link color */
+.dark-mode .password_link a {
+    color: #5494de;
+}
+
+/* Dark mode button styling */
+.dark-mode form button {
+    background: #C77DFF;
+}
+
+/* Dark mode slider button color */
+.dark-mode .box .button_box .slider_button {
+    background: linear-gradient(45deg, #c3c5c9, #ed21e4);
+}
+
+/* Default state for signup and login buttons */
+.box .button_box .signup_button,
+.box .button_box .login_button {
+    border: 2px solid transparent;
+}
+
+/* Inactive state for buttons in light mode */
+.box .button_box .inactive {
+    border: 2px solid #9b11b1;
+    border-radius: 5px;
+}
+
+/* Inactive state for buttons in dark mode */
+.dark-mode .box .button_box .inactive {
+    border-color: #fff;
+    border-radius: 5px;
+    border-color: #7B2CBF;
+}
+
+/* Dark mode input box styling */
+.dark-mode .form_box form .input_box input {
+    color: #fff;
+    padding-left: 8px;
+    background-color: #5A189A;
+    border-width: 0px 0px 2px 0px;
+    border-color: #10002B;
+}
+
+/* Dark mode label adjustments */
+.dark-mode .form_box form .input_box label {
+    left: 12px;
+    top: 13px;
+    font-size: 18px;
+    color: #C77DFF;
+}
+
+/* Dark mode label animation on focus or valid state */
+.dark-mode .form_box form .input_box input:focus + label,
+.form_box form .input_box input:valid + label {
+    top: -20px;
+    font-size: 18px;
+    color: #C77DFF;
+}
+
+/* Dark mode password link styling */
+.dark-mode .form_box form .password_link a {
+    color: #9D4EDD;
+}
