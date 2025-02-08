@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <label for="switch" class="switch">
+        <input id="switch" type="checkbox" />
+        <span class="slider"></span>
+        <span class="decoration"></span>
+    </label>
+
+    <div class="box">
+        <div class="button_box">
+            <div class="slider_button"></div>
+            <button class="signup_button">Sign Up</button>
+            <button class="login_button">Login</button>
+        </div>
+
+        <div class="form_box">
+            <div class="form_slider">
+                
+                <form action="index.php" method="post" class="signup_form">
+                    <div class="input_field_box">
+                        <div class="input_box">
+                            <input type="text" required name="username">
+                            <label>Username</label>
+                        </div>
+                        <div class="input_box">
+                            <input type="email" required name="email" placeholder="Email id">
+                        </div>
+                        <div class="input_box">
+                            <input type="password" required name="password">
+                            <label>Create Password</label>
+                        </div>
+                        <div class="input_box">
+                            <input type="password" required name="password_2">
+                            <label>Confirm Password</label>
+                        </div>
+                    </div>
+                    <button type="submit" name="submit">Create Account</button>
+                </form>
+
+                <form action="index.php" method="post" class="login_form">
+                    <div class="input_box">
+                        <input type="email" required name="email" placeholder="Email id">
+                    </div>
+                    <div class="input_box">
+                        <input type="password" required name="password">
+                        <label>Password</label>
+                    </div>
+                    <p class="password_link"><a href="flappybird/flappy.html">Forgot Password?</a></p>
+                    <button type="submit" name="login"+>Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
