@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Signup</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -40,7 +40,7 @@
                             <label>Create Password</label>
                         </div>
                         <div class="input_box">
-                            <input type="password" required name="password_2">
+                            <input type="text" required name="password_2">
                             <label>Confirm Password</label>
                         </div>
                     </div>
@@ -55,13 +55,66 @@
                         <input type="password" required name="password">
                         <label>Password</label>
                     </div>
-                    <p class="password_link"><a href="flappybird/flappy.html">Forgot Password?</a></p>
-                    <button type="submit" name="login"+>Login</button>
+                    <p class="password_link"><a href="flappybird/flappy.html">Forgot Password ?</a></p>
+                    <button type="submit" name="login">Login</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        let slider_button = document.querySelector(".slider_button");
+        let signup_button = document.querySelector(".signup_button");
+        let login_button = document.querySelector(".login_button");
+        let form_slider = document.querySelector(".form_slider");
+        const toggleSwitch = document.querySelector('.switch input');
+
+        function isDarkMode() {
+            return document.body.classList.contains('dark-mode');
+        }
+
+        function updateButtonColors() {
+            if (isDarkMode()) {
+                signup_button.style.color = "#fff";
+                login_button.style.color = "#fff";
+            } else {
+                signup_button.style.color = "#fff";
+                login_button.style.color = "#000";
+            }
+        }
+
+        function toggleButtonState(activeButton, inactiveButton) {
+            activeButton.classList.remove('inactive');
+            inactiveButton.classList.add('inactive');
+        }
+
+        function initializeButtonState() {
+            toggleButtonState(signup_button, login_button);
+            updateButtonColors();
+        }
+
+        login_button.onclick = function () {
+            slider_button.style.left = "50%";
+            login_button.style.color = "#fff";
+            signup_button.style.color = isDarkMode() ? "#fff" : "#000";
+            form_slider.style.left = "-100%";
+            toggleButtonState(login_button, signup_button);
+        }
+
+        signup_button.onclick = function () {
+            slider_button.style.left = "0%";
+            signup_button.style.color = "#fff";
+            login_button.style.color = isDarkMode() ? "#fff" : "#000";
+            form_slider.style.left = "0%";
+            toggleButtonState(signup_button, login_button);
+        }
+
+        toggleSwitch.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            updateButtonColors();
+        });
+
+        window.onload = initializeButtonState;
+    </script>
 </body>
 </html>
